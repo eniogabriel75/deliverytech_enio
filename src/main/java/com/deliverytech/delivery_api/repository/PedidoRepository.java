@@ -14,7 +14,7 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     List<Pedido> findByStatus(StatusPedidos status);
-    List<Pedido> findByClientId(Long clienteId);
+    List<Pedido> findByClienteId(Long clienteId);
 
     @Query("""
         SELECT p FROM Pedido p

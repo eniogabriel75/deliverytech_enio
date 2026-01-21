@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
-  List<Produto> findByRestaurantId(Long restauranteId);
-  List<Produto> findByCategoria(String categoria);
-  List<Produto> findByAvalible();
+    List<Produto> findByRestauranteId(Long restauranteId);
+    List<Produto> findByCategoria(String categoria);
+    List<Produto> findByDisponivelTrue();
+    List<Produto> findByRestauranteIdAndDisponivelTrue(Long restauranteId);
 }

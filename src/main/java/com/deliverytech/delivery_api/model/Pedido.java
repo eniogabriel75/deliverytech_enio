@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import jakarta.persistence.CascadeType;
 
 import com.deliverytech.delivery_api.enums.StatusPedidos;
 
@@ -51,13 +52,18 @@ public class Pedido {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "cliente_id")
-  private Cliente clientes;
+  private Cliente cliente;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "restaurante_id")
   private Restaurante restaurante;
 
-  @OneToMany(mappedBy = "pedido")
+  @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<ItemPedido> itens = new ArrayList<>();
+
+  public void setCliente(Cliente cliente) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setCliente'");
+  }
 
 }

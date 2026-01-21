@@ -36,4 +36,9 @@ public class ItemPedido {
   @JoinColumn(name = "pedido_id")
   private Pedido pedido;
 
+  public void setSubtotal(BigDecimal subtotal) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'setSubtotal'");
+  }
+
 }
